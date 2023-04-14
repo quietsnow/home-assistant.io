@@ -139,7 +139,9 @@ The first thing you need to do after signing into the [AWS console](https://cons
 Next you need create a Lambda function.
 
 - Click `Services` in top navigation bar, expand the menu to display all AWS services, then under `Compute` section click `Lambda` to navigate to Lambda console. Or you may use this [link](https://console.aws.amazon.com/lambda/home)
-- **IMPORTANT - Alexa Skills are only supported in certain AWS regions** Your current server location will be displayed on the top right corner (for example, Ohio), make sure you select the server closest to your location / region based on your Amazon account's country, whilst also ensuring that it is within one of the supported regions for Alexa Skills otherwise this will not work!
+- **IMPORTANT** - To make this integration work, it is critical that the Lambda Function gets setup on the data center / region that matches your specified language (e.g., `locale: en-US` must be setup on `US East (N. Virginia)`).
+  <img width="316" src='[/images/integrations/alexa/lambda_function_env_var.png](https://user-images.githubusercontent.com/1450566/232121774-0fcb101e-4dcc-4357-b660-b22d9c399bf9.png)' alt='Screenshot: AWS Lambda Region Selection'><br>
+  This is done by changing whatever AWS has as your default region in the upper-right of the page. Please note that **you must select the region that corresponds with your language, not geographic location**. Alexa Skills are only supported in 3 AWS regions:
   - **US East (N.Virginia)** region for English (US) or English (CA) skills
   - **EU (Ireland)** region for English (UK), English (IN), German (DE), Spanish (ES) or French (FR) skills
   - **US West (Oregon)** region for Japanese and English (AU) skills.
